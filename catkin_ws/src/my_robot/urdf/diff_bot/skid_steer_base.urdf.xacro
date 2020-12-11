@@ -6,15 +6,15 @@
     <xacro:include filename="$(find my_robot)/urdf/diff_bot/common_properties.urdf.xacro" />
 
     <!-- Define a number of dimensions using properties -->
-    <xacro:property name="base_size_x" value="1.20" />
-    <xacro:property name="base_size_y" value="1.0" />
-    <xacro:property name="base_size_z" value="0.26191" />
-    <xacro:property name="wheel_length" value="0.07032" />
+    <xacro:property name="base_size_x" value="0.6" />
+    <xacro:property name="base_size_y" value="0.5" />
+    <xacro:property name="base_size_z" value="0.130955" />
+    <xacro:property name="wheel_length" value="0.03516" />
     <!-- 0.06032 value for perfect fit.-->
-    <xacro:property name="wheel_radius" value="0.17" />
-    <xacro:property name="wheel_offset_x" value="0.6" />
-    <xacro:property name="wheel_offset_y" value="0.46984" />
-    <xacro:property name="wheel_offset_z" value="-0.045955" />
+    <xacro:property name="wheel_radius" value="0.085" />
+    <xacro:property name="wheel_offset_x" value="0.3" />
+    <xacro:property name="wheel_offset_y" value="0.23492" />
+    <xacro:property name="wheel_offset_z" value="-0.0229775" />
     <xacro:property name="PI" value="3.1415" />
     <!-- differential_drive_controller update rate -->
     <xacro:property name="update_rate" value="30" />
@@ -144,7 +144,7 @@
     <!-- Plugins -->
     <gazebo>
         <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
-            <updateRate>30.0</updateRate>
+            <updateRate>90.0</updateRate>
             <robotNamespace>/my_robot</robotNamespace>
             <leftFrontJoint>base_fl_wheel_joint</leftFrontJoint>
             <rightFrontJoint>base_fr_wheel_joint</rightFrontJoint>
