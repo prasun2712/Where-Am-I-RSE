@@ -1,14 +1,8 @@
 <launch>
-   <!--Map Server-->
-   <arg name="map_file" default="$(find my_robot)/maps/map.yaml"/>
-   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)">
-      <!--param name="frame_id" value="map"/-->
-   </node>
-
    <!-- AMCL Node -->
    <node name="amcl" pkg="amcl" type="amcl" output="screen">
-      <!--remap from="scan" to="scan_multi"/-->
-      <remap from="scan" to="br_scan"/>
+      <remap from="scan" to="scan_multi"/>
+      <!-- <remap from="scan" to="fl_scan"/> -->
       <param name="odom_frame_id" value="odom"/>
       <param name="odom_model_type" value="diff"/>
       <param name="base_frame_id" value="base_footprint"/>
@@ -17,7 +11,13 @@
       <!-- If you choose to define initial pose here -->
       <param name="initial_pose_x" value="0"/>
       <param name="initial_pose_y" value="0"/>
-      <param name="initial_pose_a" value="0"/>
+      <param name="initial_pose_a" value="-1.5708"/>
+      <!-- <param name="update_min_d" value="0.01"/>
+      <param name="update_min_a" value="0.05"/> -->
+      <param name="transform_tolerance" value="1"/>
+      <param name="odom_alpha1" value="0"/>
+      <param name="odom_alpha2" value="0"/>
+      <param name="odom_alpha3" value="0"/>
+      <param name="odom_alpha4" value="0"/>
    </node>
-
 </launch>
