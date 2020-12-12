@@ -39,3 +39,24 @@ Welcome to the Where Am I? localization project! In this project, you will learn
 
 * Close-up view of the **Robot**.
 ![](https://github.com/prasun2712/Where-Am-I-RSE/blob/main/images/robot_closeup.png "Close-up view of the Robot")
+
+## Prerequisite
+* Basic knowledge of ROS.
+* ROS Kinetic installed.
+* ros-kinetic-navigation, ros-kinetic-map-server, ros-kinetic-move-base, ros-kinetic-amcl, ros-kinetic-dwa-local-planner
+                            
+## Build and Run
+```
+cd ~/
+git clone https://github.com/prasun2712/Where-Am-I-RSE.git
+cd ~/Where-Am-I-RSE/catkin_ws
+catkin_make
+```
+***Terminal 1***
+```
+roslaunch my_robot all_in_one.launch
+```
+***Terminal 2***
+```
+roslaunch my_robot teleop.launch
+```
